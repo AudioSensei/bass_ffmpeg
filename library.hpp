@@ -1,0 +1,6 @@
+#ifndef BASS_FFMPEG_LIBRARY_HPP
+#define BASS_FFMPEG_LIBRARY_HPP
+
+void hello();
+
+#endif //BASS_FFMPEG_LIBRARY_HPP
