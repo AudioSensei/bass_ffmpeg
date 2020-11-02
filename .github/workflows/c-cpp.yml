@@ -24,4 +24,4 @@ jobs:
       working-directory: ./ffmpeg
     - name: List codecs
       run: ffmpeg -codecs
-      working-directory: $HOME/bin
+      working-directory: ~/bin
