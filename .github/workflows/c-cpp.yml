@@ -23,5 +23,4 @@ jobs:
       run: make install
       working-directory: ./ffmpeg
     - name: List codecs
-      run: ffmpeg -codecs
-      working-directory: ~/bin
+      run: ~/bin/ffmpeg -codecs
