@@ -37,4 +37,4 @@ jobs:
       run: make install
       working-directory: ./ffmpeg
     - name: List codecs
-      run: ~/bin/ffmpeg -codecs | grep "D.A... " | wc -l
+      run: ~/bin/ffmpeg -codecs
