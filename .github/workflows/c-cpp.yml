@@ -17,12 +17,13 @@ jobs:
       run: cd ffmpeg
     - name: Configure ffmpeg
       run: PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure --prefix="$HOME/ffmpeg_build" --pkg-config-flags="--static" --extra-cflags="-I$HOME/ffmpeg_build/include" --extra-ldflags="-L$HOME/ffmpeg_build/lib" --extra-libs="-lpthread -lm" --bindir="$HOME/bin" --disable-stripping --enable-avresample --disable-filter=resample --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca  --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libxml2 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-chromaprint --enable-version3 --disable-doc --enable-liblensfun --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libvo_amrwbenc --disable-encoders --disable-muxers --disable-devices --disable-filters
+      working-directory: ./ffmpeg
     - name: Make ffmpeg
       run: PATH="$HOME/bin:$PATH" make -j4
+      working-directory: ./ffmpeg
     - name: Make install ffmpeg
       run: make install
-    - name: Exit ffmpeg
-      run: cd ..
+      working-directory: ./ffmpeg
     - name: Source ffmpeg
       run: source ~/.profile
     - name: List codecs
